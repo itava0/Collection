@@ -105,9 +105,10 @@ public class Main {
             System.out.println("Key: " + i + " value: " + dogsHashMap.get(i));
         }
 
-        //Sort HasMap
-        ArrayList<HashMap.Entry<Integer, Dogs>> sortedMap = new ArrayList<HashMap.Entry<Integer, Dogs>>();
-        sortedMap.addAll(dogsHashMap.entrySet());
+        System.out.println("Sort HashMap:");
+
+        //Sort HashMap
+        ArrayList<HashMap.Entry<Integer, Dogs>> sortedMap = new ArrayList<HashMap.Entry<Integer, Dogs>>(dogsHashMap.entrySet());
 
         //I'm sorting the HashMap Alphabetically order
         Collections.sort(sortedMap, new Comparator<HashMap.Entry<Integer, Dogs>>() {
