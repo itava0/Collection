@@ -1,6 +1,7 @@
 package com.itavarez;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Arrays;
 
 public class Main {
 
@@ -31,6 +32,52 @@ public class Main {
         // varied length
         //fixed index
         System.out.println("*** ArrayList ***");
+         //Object -> Collections -> List -> ArrayList
+        //created array list
+        ArrayList<Dogs> dogsArrayList = new ArrayList<Dogs>();
+        //I'm converting the dogArr into ArrayList
+        dogsArrayList.addAll(Arrays.asList(dogArr));
+
+        dogsArrayList.add(new Dogs("Mutt", 15, true));
+
+        //For each Loop
+        for (Dogs d : dogsArrayList) {
+            System.out.println(d);
+        }
+
+        System.out.println();
+
+        for (Dogs d: dogsArrayList) {
+            if(d.getAvgWeight() >= 50) {
+                System.out.println(d.getBreed() + " are large");
+            } else {
+                System.out.println((d.getBreed() + " are small"));
+            }
+        }
+
+        // If I want to compare strings inside an object I need the equal()
+        if(dogsArrayList.get(2).getBreed().equals("Turtle")) {
+            System.out.println("Equals");
+        } else {
+            System.out.println(("Not equals"));
+        }
+        System.out.println();
+
+        //add elements
+        dogsArrayList.add(2, new Dogs("Labrador", 75, false));
+        dogsArrayList.forEach(dogs -> System.out.println(dogs));
+        System.out.println();
+
+        //Set replace what on that index
+        dogsArrayList.set(2, new Dogs("Poodle", 50, true));
+        dogsArrayList.forEach(dogs -> System.out.println(dogs));
+        System.out.println();
+
+        System.out.println("Size " + dogsArrayList.size());
+        System.out.println(dogsArrayList.get(3));
+        dogsArrayList.remove(3);
+        System.out.println(dogsArrayList.get(3));
+        System.out.println();
 
         //choice in index
         //fixed element type
